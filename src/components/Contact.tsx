@@ -29,36 +29,36 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Contact</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
             Parlons de votre projet
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Une question ? Un projet ? N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Demande de devis gratuit</h3>
+            <div className="bg-white dark:bg-slate-700 rounded-xl shadow-lg p-8 transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Demande de devis gratuit</h3>
 
               {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 text-center">
                   <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Send className="text-white" size={32} />
                   </div>
-                  <h4 className="text-xl font-bold text-green-800 mb-2">Message envoyé !</h4>
-                  <p className="text-green-700">Nous vous répondrons dans les 24 heures.</p>
+                  <h4 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">Message envoyé !</h4>
+                  <p className="text-green-700 dark:text-green-300">Nous vous répondrons dans les 24 heures.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Nom complet *
                       </label>
                       <input
@@ -68,13 +68,13 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
                         placeholder="Jean Dupont"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Téléphone *
                       </label>
                       <input
@@ -84,14 +84,14 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
                         placeholder="+33 6 12 34 56 78"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email *
                     </label>
                     <input
@@ -101,13 +101,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
                       placeholder="jean.dupont@email.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Type de projet *
                     </label>
                     <select
@@ -116,7 +116,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
                     >
                       <option value="">Sélectionnez un type de projet</option>
                       <option value="construction">Construction neuve</option>
@@ -128,7 +128,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Décrivez votre projet *
                     </label>
                     <textarea
@@ -138,7 +138,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
                       placeholder="Décrivez-nous votre projet en détail..."
                     ></textarea>
                   </div>
@@ -151,7 +151,7 @@ export default function Contact() {
                     <Send size={20} />
                   </button>
 
-                  <p className="text-sm text-gray-500 text-center">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
                     * Champs obligatoires - Vos données sont protégées et ne seront pas partagées
                   </p>
                 </form>
@@ -160,14 +160,14 @@ export default function Contact() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="bg-white dark:bg-slate-700 rounded-xl shadow-lg p-6 transition-colors duration-300">
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-orange-100 p-3 rounded-lg">
+                <div className="bg-orange-100 dark:bg-orange-500/20 p-3 rounded-lg">
                   <MapPin className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-1">Adresse</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Adresse</h4>
+                  <p className="text-gray-600 dark:text-gray-300">
                     parcelles assainies unite 9<br />
                     Dakar, Sénégal
                   </p>
@@ -175,34 +175,34 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-orange-100 p-3 rounded-lg">
+                <div className="bg-orange-100 dark:bg-orange-500/20 p-3 rounded-lg">
                   <Phone className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-1">Téléphone</h4>
-                  <p className="text-gray-600">+221 784307723 / +221 774526722 </p>
-                  <p className="text-sm text-gray-500">Lun - Ven : 8h - 18h</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Téléphone</h4>
+                  <p className="text-gray-600 dark:text-gray-300">+221 784307723 / +221 774526722 </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Lun - Ven : 8h - 18h</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="bg-orange-100 p-3 rounded-lg">
+                <div className="bg-orange-100 dark:bg-orange-500/20 p-3 rounded-lg">
                   <Mail className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-1">Email</h4>
-                  <p className="text-gray-600">semanbtp59@gmail.com</p>
-                  <p className="text-sm text-gray-500">Réponse sous 24h</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Email</h4>
+                  <p className="text-gray-600 dark:text-gray-300">semanbtp59@gmail.com</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Réponse sous 24h</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-orange-100 p-3 rounded-lg">
+                <div className="bg-orange-100 dark:bg-orange-500/20 p-3 rounded-lg">
                   <Clock className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-1">Horaires</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Horaires</h4>
+                  <p className="text-gray-600 dark:text-gray-300">
                     Lundi - Vendredi<br />
                     8h00 - 13h00 / 14h00 - 18h00
                   </p>
@@ -210,9 +210,9 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-slate-900 rounded-xl shadow-lg p-6 text-white">
+            <div className="bg-slate-900 dark:bg-slate-700 rounded-xl shadow-lg p-6 text-white transition-colors duration-300">
               <h4 className="font-bold text-xl mb-3">Intervention rapide</h4>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 dark:text-gray-300 mb-4">
                 Besoin d'une intervention en urgence ? Contactez-nous directement par téléphone.
               </p>
               <a

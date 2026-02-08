@@ -39,14 +39,14 @@ export default function Projects() {
   ];
 
   return (
-    <section id="realisations" className="py-20 bg-gray-50">
+    <section id="realisations" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Nos Réalisations</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
             Des projets qui parlent pour nous
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Découvrez quelques-unes de nos réalisations récentes et laissez-vous inspirer
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group relative bg-white dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
@@ -74,23 +74,23 @@ export default function Projects() {
               </div>
 
               <div className="p-6">
-                <span className="inline-block bg-orange-100 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                <span className="inline-block bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 text-xs font-semibold px-3 py-1 rounded-full mb-3">
                   {project.category}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600 text-sm">{project.description}</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{project.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             Envie de voir plus de nos réalisations ou de discuter de votre projet ?
           </p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-slate-900 text-white px-8 py-4 rounded-md hover:bg-slate-800 font-semibold text-lg transition-all transform hover:scale-105"
+            className="bg-slate-900 dark:bg-slate-700 text-white px-8 py-4 rounded-md hover:bg-slate-800 dark:hover:bg-slate-600 font-semibold text-lg transition-all transform hover:scale-105"
           >
             Contactez-nous
           </button>

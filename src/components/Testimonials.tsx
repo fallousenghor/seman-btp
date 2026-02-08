@@ -23,14 +23,14 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Témoignages</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-3 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
             Ils nous font confiance
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             La satisfaction de nos clients est notre plus belle récompense
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl p-8 relative hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-50 dark:bg-slate-800 rounded-xl p-8 relative hover:shadow-xl transition-shadow duration-300"
             >
               <Quote className="text-orange-500 absolute top-6 right-6 opacity-20" size={48} />
 
@@ -49,7 +49,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-gray-700 mb-6 leading-relaxed italic">
+              <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic">
                 "{testimonial.content}"
               </p>
 
@@ -58,15 +58,15 @@ export default function Testimonials() {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white">
+        <div className="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-700 dark:to-slate-600 rounded-2xl p-8 md:p-12 text-center text-white transition-colors duration-300">
           <div className="max-w-3xl mx-auto">
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (

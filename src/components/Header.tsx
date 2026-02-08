@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-slate-900 text-white py-2 px-4">
+      <div className="bg-slate-900 text-white py-2 px-4 dark:bg-black">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <a href="tel:+221784307723" className="flex items-center gap-2 hover:text-orange-400 transition-colors">
@@ -33,43 +34,47 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="bg-white shadow-md sticky top-0 z-50">
+      <header className="bg-white dark:bg-slate-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center gap-3">
                 <Logo />
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                  <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                     SEMAN<span className="text-orange-500">-BTP</span>
                   </h1>
-                  <p className="text-xs text-gray-600 mt-1">Bâtir votre avenir</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Bâtir votre avenir</p>
                 </div>
               </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('accueil')} className="text-gray-700 hover:text-orange-500 font-medium transition-colors">
+              <button onClick={() => scrollToSection('accueil')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
                 Accueil
               </button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-orange-500 font-medium transition-colors">
+              <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
                 Services
               </button>
-              <button onClick={() => scrollToSection('apropos')} className="text-gray-700 hover:text-orange-500 font-medium transition-colors">
+              <button onClick={() => scrollToSection('apropos')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
                 À propos
               </button>
-              <button onClick={() => scrollToSection('realisations')} className="text-gray-700 hover:text-orange-500 font-medium transition-colors">
+              <button onClick={() => scrollToSection('realisations')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
                 Réalisations
               </button>
-              <button onClick={() => scrollToSection('contact')} className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 font-medium transition-colors">
-                Contact
-              </button>
+              <div className="flex items-center gap-4">
+                <ThemeToggle />
+                <button onClick={() => scrollToSection('contact')} className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 font-medium transition-colors">
+                  Contact
+                </button>
+              </div>
             </div>
 
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center gap-3">
+              <ThemeToggle />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-orange-500 focus:outline-none"
+                className="text-gray-700 dark:text-gray-200 hover:text-orange-500 focus:outline-none"
               >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -79,16 +84,16 @@ export default function Header() {
           {isMenuOpen && (
             <div className="md:hidden pb-4">
               <div className="flex flex-col space-y-3">
-                <button onClick={() => scrollToSection('accueil')} className="text-gray-700 hover:text-orange-500 font-medium text-left py-2">
+                <button onClick={() => scrollToSection('accueil')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
                   Accueil
                 </button>
-                <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-orange-500 font-medium text-left py-2">
+                <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
                   Services
                 </button>
-                <button onClick={() => scrollToSection('apropos')} className="text-gray-700 hover:text-orange-500 font-medium text-left py-2">
+                <button onClick={() => scrollToSection('apropos')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
                   À propos
                 </button>
-                <button onClick={() => scrollToSection('realisations')} className="text-gray-700 hover:text-orange-500 font-medium text-left py-2">
+                <button onClick={() => scrollToSection('realisations')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
                   Réalisations
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 font-medium text-left">
