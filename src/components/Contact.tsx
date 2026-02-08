@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ export default function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { t, language } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,38 +30,47 @@ export default function Contact() {
     });
   };
 
+  const subjectOptions = [
+    { value: '', label: 'contact.form.subject.0' },
+    { value: 'construction', label: 'contact.form.subject.1' },
+    { value: 'renovation', label: 'contact.form.subject.2' },
+    { value: 'extension', label: 'contact.form.subject.3' },
+    { value: 'amenagement', label: 'contact.form.subject.4' },
+    { value: 'autre', label: 'contact.form.subject.5' }
+  ];
+
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Contact</span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
-            Parlons de votre projet
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Une question ? Un projet ? N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais
+            {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-slate-700 rounded-xl shadow-lg p-8 transition-colors duration-300">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Demande de devis gratuit</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">{t('contact.form.title')}</h3>
 
               {isSubmitted ? (
                 <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 text-center">
                   <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Send className="text-white" size={32} />
                   </div>
-                  <h4 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">Message envoyé !</h4>
-                  <p className="text-green-700 dark:text-green-300">Nous vous répondrons dans les 24 heures.</p>
+                  <h4 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">{t('contact.success')}</h4>
+                  <p className="text-green-700 dark:text-green-300">{t('contact.success.desc')}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Nom complet *
+                        {t('contact.form.name')}
                       </label>
                       <input
                         type="text"
@@ -69,13 +80,13 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
-                        placeholder="Jean Dupont"
+                        placeholder={t('contact.form.placeholder.name')}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Téléphone *
+                        {t('contact.form.phone')}
                       </label>
                       <input
                         type="tel"
@@ -85,14 +96,14 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
-                        placeholder="+33 6 12 34 56 78"
+                        placeholder={t('contact.form.placeholder.phone')}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Email *
+                      {t('contact.form.email')}
                     </label>
                     <input
                       type="email"
@@ -102,13 +113,13 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
-                      placeholder="jean.dupont@email.com"
+                      placeholder={t('contact.form.placeholder.email')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Type de projet *
+                      {t('contact.form.subject')}
                     </label>
                     <select
                       id="subject"
@@ -118,18 +129,17 @@ export default function Contact() {
                       required
                       className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
                     >
-                      <option value="">Sélectionnez un type de projet</option>
-                      <option value="construction">Construction neuve</option>
-                      <option value="renovation">Rénovation</option>
-                      <option value="extension">Extension</option>
-                      <option value="amenagement">Aménagement</option>
-                      <option value="autre">Autre</option>
+                      {subjectOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {t(option.label)}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Décrivez votre projet *
+                      {t('contact.form.message')}
                     </label>
                     <textarea
                       id="message"
@@ -139,7 +149,7 @@ export default function Contact() {
                       required
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
-                      placeholder="Décrivez-nous votre projet en détail..."
+                      placeholder={t('contact.form.placeholder.message')}
                     ></textarea>
                   </div>
 
@@ -147,12 +157,12 @@ export default function Contact() {
                     type="submit"
                     className="w-full bg-orange-500 text-white px-8 py-4 rounded-md hover:bg-orange-600 font-semibold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2"
                   >
-                    Envoyer ma demande
+                    {t('contact.form.submit')}
                     <Send size={20} />
                   </button>
 
                   <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                    * Champs obligatoires - Vos données sont protégées et ne seront pas partagées
+                    {t('contact.form.required')}
                   </p>
                 </form>
               )}
@@ -167,9 +177,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-1">Adresse</h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    parcelles assainies unite 9<br />
-                    Dakar, Sénégal
+                  <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+                    {language === 'fr' ? 'parcelles assainies unite 9\nDakar, Sénégal' : 'Assanied plots unit 9\nDakar, Senegal'}
                   </p>
                 </div>
               </div>
@@ -179,9 +188,9 @@ export default function Contact() {
                   <Phone className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Téléphone</h4>
-                  <p className="text-gray-600 dark:text-gray-300">+221 784307723 / +221 774526722 </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Lun - Ven : 8h - 18h</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">{t('contact.form.phone')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300">+221 784307723 / +221 774526722</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{t('contact.info.hours')}</p>
                 </div>
               </div>
 
@@ -192,7 +201,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-1">Email</h4>
                   <p className="text-gray-600 dark:text-gray-300">semanbtp59@gmail.com</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Réponse sous 24h</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{t('contact.info.email.desc')}</p>
                 </div>
               </div>
 
@@ -201,25 +210,24 @@ export default function Contact() {
                   <Clock className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Horaires</h4>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">{language === 'fr' ? 'Horaires' : 'Hours'}</h4>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Lundi - Vendredi<br />
-                    8h00 - 13h00 / 14h00 - 18h00
+                    {language === 'fr' ? 'Lundi - Viernes\n8h00 - 13h00 / 14h00 - 18h00' : 'Monday - Friday\n8am - 1pm / 2pm - 6pm'}
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-slate-900 dark:bg-slate-700 rounded-xl shadow-lg p-6 text-white transition-colors duration-300">
-              <h4 className="font-bold text-xl mb-3">Intervention rapide</h4>
+              <h4 className="font-bold text-xl mb-3">{t('contact.urgent.title')}</h4>
               <p className="text-gray-300 dark:text-gray-300 mb-4">
-                Besoin d'une intervention en urgence ? Contactez-nous directement par téléphone.
+                {t('contact.urgent.desc')}
               </p>
               <a
                 href="tel:+221784307723"
                 className="block w-full bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 font-semibold text-center transition-all"
               >
-                Appeler maintenant
+                {t('contact.call')}
               </a>
             </div>
           </div>
@@ -228,3 +236,4 @@ export default function Contact() {
     </section>
   );
 }
+

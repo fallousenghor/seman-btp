@@ -1,42 +1,39 @@
 import { Building2, Home, Hammer, Wrench, Paintbrush, TreePine } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Services() {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Building2,
-      title: 'Construction neuve',
-      description: 'Construction de bâtiments résidentiels et commerciaux clés en main avec les dernières normes.',
-      features: ['Maisons individuelles', 'Immeubles collectifs', 'Bâtiments commerciaux']
+      key: 'service.1',
+      features: ['service.1.features.0', 'service.1.features.1', 'service.1.features.2']
     },
     {
       icon: Home,
-      title: 'Rénovation',
-      description: 'Rénovation complète ou partielle de votre habitat pour lui donner une seconde vie.',
-      features: ['Rénovation énergétique', 'Restructuration', 'Mise aux normes']
+      key: 'service.2',
+      features: ['service.2.features.0', 'service.2.features.1', 'service.2.features.2']
     },
     {
       icon: Hammer,
-      title: 'Gros œuvre',
-      description: 'Tous travaux de gros œuvre réalisés par des professionnels qualifiés et certifiés.',
-      features: ['Maçonnerie', 'Terrassement', 'Fondations']
+      key: 'service.3',
+      features: ['service.3.features.0', 'service.3.features.1', 'service.3.features.2']
     },
     {
       icon: Wrench,
-      title: 'Second œuvre',
-      description: 'Finitions et aménagements intérieurs pour parfaire votre projet de construction.',
-      features: ['Plomberie', 'Électricité', 'Menuiserie']
+      key: 'service.4',
+      features: ['service.4.features.0', 'service.4.features.1', 'service.4.features.2']
     },
     {
       icon: Paintbrush,
-      title: 'Aménagement',
-      description: 'Aménagement et décoration pour optimiser et embellir vos espaces de vie.',
-      features: ['Peinture', 'Revêtements', 'Agencement']
+      key: 'service.5',
+      features: ['service.5.features.0', 'service.5.features.1', 'service.5.features.2']
     },
     {
       icon: TreePine,
-      title: 'Extérieurs',
-      description: 'Création et aménagement de vos espaces extérieurs pour profiter pleinement de votre jardin.',
-      features: ['Terrasses', 'Clôtures', 'Allées']
+      key: 'service.6',
+      features: ['service.6.features.0', 'service.6.features.1', 'service.6.features.2']
     }
   ];
 
@@ -46,10 +43,10 @@ export default function Services() {
         <div className="text-center mb-16">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Nos Services</span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
-            Une expertise complète à votre service
+            {t('services.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Du projet à la réalisation, nous vous accompagnons avec professionnalisme et savoir-faire
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -63,14 +60,14 @@ export default function Services() {
                 <service.icon className="text-orange-500 dark:text-orange-400 group-hover:text-white transition-colors" size={32} />
               </div>
 
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{t(`${service.key}.title`)}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{t(`${service.key}.description`)}</p>
 
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-gray-700 dark:text-gray-300">
                     <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                    {feature}
+                    {t(feature)}
                   </li>
                 ))}
               </ul>
@@ -79,15 +76,15 @@ export default function Services() {
         </div>
 
         <div className="mt-16 bg-slate-900 dark:bg-slate-700 rounded-2xl p-8 md:p-12 text-center text-white transition-colors duration-300">
-          <h3 className="text-3xl font-bold mb-4">Un projet sur mesure ?</h3>
+          <h3 className="text-3xl font-bold mb-4">{t('services.cta.title')}</h3>
           <p className="text-xl text-gray-300 mb-8">
-            Contactez-nous pour discuter de vos besoins spécifiques et obtenir un devis personnalisé
+            {t('services.cta.description')}
           </p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-orange-500 text-white px-8 py-4 rounded-md hover:bg-orange-600 font-semibold text-lg transition-all transform hover:scale-105"
           >
-            Obtenir un devis gratuit
+            {t('services.cta.button')}
           </button>
         </div>
       </div>

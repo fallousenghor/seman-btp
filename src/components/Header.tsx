@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -29,7 +32,7 @@ export default function Header() {
             </a>
           </div>
           <div className="text-xs sm:text-sm text-gray-300">
-            Disponible du lundi au vendredi : 8h - 18h
+            {t('topbar.available')}
           </div>
         </div>
       </div>
@@ -44,33 +47,35 @@ export default function Header() {
                   <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                     SEMAN<span className="text-orange-500">-BTP</span>
                   </h1>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Bâtir votre avenir</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">{t('footer.tagline')}</p>
                 </div>
               </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
               <button onClick={() => scrollToSection('accueil')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
-                Accueil
+                {t('header.home')}
               </button>
               <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
-                Services
+                {t('header.services')}
               </button>
               <button onClick={() => scrollToSection('apropos')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
-                À propos
+                {t('header.about')}
               </button>
               <button onClick={() => scrollToSection('realisations')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium transition-colors">
-                Réalisations
+                {t('header.projects')}
               </button>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
+                <LanguageToggle />
                 <ThemeToggle />
                 <button onClick={() => scrollToSection('contact')} className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 font-medium transition-colors">
-                  Contact
+                  {t('header.contact')}
                 </button>
               </div>
             </div>
 
             <div className="md:hidden flex items-center gap-3">
+              <LanguageToggle />
               <ThemeToggle />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -85,19 +90,19 @@ export default function Header() {
             <div className="md:hidden pb-4">
               <div className="flex flex-col space-y-3">
                 <button onClick={() => scrollToSection('accueil')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
-                  Accueil
+                  {t('header.home')}
                 </button>
                 <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
-                  Services
+                  {t('header.services')}
                 </button>
                 <button onClick={() => scrollToSection('apropos')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
-                  À propos
+                  {t('header.about')}
                 </button>
                 <button onClick={() => scrollToSection('realisations')} className="text-gray-700 dark:text-gray-200 hover:text-orange-500 font-medium text-left py-2">
-                  Réalisations
+                  {t('header.projects')}
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 font-medium text-left">
-                  Contact
+                  {t('header.contact')}
                 </button>
               </div>
             </div>

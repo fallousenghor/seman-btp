@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -18,18 +19,20 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen transition-colors duration-300">
-        <Header />
-        <Hero />
-        <Services />
-        <About />
-        <Projects />
-        <Testimonials />
-        <Contact />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="min-h-screen transition-colors duration-300">
+          <Header />
+          <Hero />
+          <Services />
+          <About />
+          <Projects />
+          <Testimonials />
+          <Contact />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 

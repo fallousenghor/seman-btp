@@ -1,26 +1,25 @@
 import { CheckCircle2, Shield, Clock, ThumbsUp } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
   const values = [
     {
       icon: Shield,
-      title: 'Qualité garantie',
-      description: 'Nous utilisons uniquement des matériaux de première qualité et respectons les normes en vigueur.'
+      key: 'values.0'
     },
     {
       icon: Clock,
-      title: 'Respect des délais',
-      description: 'Nos équipes s\'engagent à respecter les délais convenus pour la livraison de votre projet.'
+      key: 'values.1'
     },
     {
       icon: ThumbsUp,
-      title: 'Satisfaction client',
-      description: 'Votre satisfaction est notre priorité. Nous vous accompagnons à chaque étape du projet.'
+      key: 'values.2'
     },
     {
       icon: CheckCircle2,
-      title: 'Certifications',
-      description: 'Entreprise certifiée RGE et qualifiée pour tous types de travaux de construction.'
+      key: 'values.3'
     }
   ];
 
@@ -31,20 +30,20 @@ export default function About() {
           <div>
             <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">À propos de nous</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-6">
-              SEMAN-BTP, votre partenaire de confiance depuis plus de 2 ans
+              {t('about.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Fondée en 2024, <strong>SEMEN-BTP</strong> est une entreprise familiale spécialisée dans tous les travaux de construction, rénovation et aménagement. Notre expérience et notre savoir-faire nous permettent de réaliser des projets de toutes envergures avec professionnalisme et rigueur.
+              {t('about.p1')}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              Nous mettons un point d'honneur à offrir à nos clients un service personnalisé, des conseils avisés et un suivi rigoureux de chaque chantier. Notre équipe d'artisans qualifiés et passionnés s'engage à transformer vos idées en réalité.
+              {t('about.p2')}
             </p>
 
             <div className="bg-orange-50 dark:bg-orange-500/10 border-l-4 border-orange-500 p-6 rounded-r-lg">
               <p className="text-slate-900 dark:text-white font-semibold text-lg italic">
-                "Notre mission : bâtir des projets durables et de qualité qui dépassent vos attentes"
+                {t('about.quote')}
               </p>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">- Jean SEMEN, Fondateur</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-2">{t('about.author')}</p>
             </div>
           </div>
 
@@ -59,7 +58,7 @@ export default function About() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-orange-500 text-white p-6 rounded-xl shadow-xl">
                 <p className="text-4xl font-bold">2+</p>
-                <p className="text-sm">Années d'excellence</p>
+                <p className="text-sm">{t('about.years')}</p>
               </div>
             </div>
 
@@ -67,8 +66,8 @@ export default function About() {
               {values.map((value, index) => (
                 <div key={index} className="text-center p-4">
                   <value.icon className="text-orange-500 mx-auto mb-3" size={32} />
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{value.title}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{value.description}</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t(`${value.key}.title`)}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{t(`${value.key}.description`)}</p>
                 </div>
               ))}
             </div>

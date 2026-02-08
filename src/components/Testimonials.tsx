@@ -1,23 +1,26 @@
 import { Star, Quote } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
       name: 'Fallou Senghor',
       role: 'Particulier',
-      content: 'SEMEN-BTP a réalisé la rénovation complète de notre maison. Le résultat dépasse nos espérances ! Une équipe professionnelle, à l\'écoute et respectueuse des délais. Je recommande vivement.',
+      contentKey: 'testimonial.1',
       rating: 5
     },
     {
       name: 'Wagane Senghor',
       role: 'Promoteur immobilier',
-      content: 'Nous travaillons avec SEMEN-BTP depuis 5 ans sur plusieurs projets de construction. Leur expertise et leur sérieux font d\'eux un partenaire de confiance. Qualité et respect des délais sont toujours au rendez-vous.',
+      contentKey: 'testimonial.2',
       rating: 5
     },
     {
       name: 'Patrick',
       role: 'Particulier',
-      content: 'Extension de notre maison réalisée avec brio. L\'équipe a su nous conseiller et nous accompagner tout au long du projet. Le chantier était propre et organisé. Merci pour votre professionnalisme !',
+      contentKey: 'testimonial.3',
       rating: 5
     }
   ];
@@ -28,10 +31,10 @@ export default function Testimonials() {
         <div className="text-center mb-16">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Témoignages</span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
-            Ils nous font confiance
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            La satisfaction de nos clients est notre plus belle récompense
+            {t('testimonials.subtitle')}
           </p>
         </div>
 
@@ -50,7 +53,7 @@ export default function Testimonials() {
               </div>
 
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic">
-                "{testimonial.content}"
+                "{t(testimonial.contentKey)}"
               </p>
 
               <div className="flex items-center gap-4">
@@ -73,12 +76,12 @@ export default function Testimonials() {
                 <Star key={i} className="text-orange-400 fill-current" size={24} />
               ))}
             </div>
-            <h3 className="text-3xl font-bold mb-4">Note moyenne : 5/5</h3>
+            <h3 className="text-3xl font-bold mb-4">{t('testimonials.rating')}</h3>
             <p className="text-xl text-gray-300 mb-2">
-              Basée sur plus de 20 avis clients
+              {t('testimonials.reviews')}
             </p>
             <p className="text-gray-400">
-              100% de nos clients recommandent nos services
+              {t('testimonials.recommend')}
             </p>
           </div>
         </div>

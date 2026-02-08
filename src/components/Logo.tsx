@@ -3,7 +3,7 @@ export default function Logo() {
     <img
       src="/logo.png"
       alt="Logo"
-      width="70"
+      width="50"
       height="40"
       className="hover:scale-110 transition-transform"
     />
