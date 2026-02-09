@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
-import cons1 from '../assets/cons1.jpeg';
+import particulier from '../assets/particulier.jpeg';
 import cons2 from '../assets/cons2.jpeg';
 import cons3 from '../assets/cons3.jpeg';
 import cons4 from '../assets/cons4.jpeg';
@@ -14,7 +14,7 @@ export default function Projects() {
       titleKey: 'projects.1.title',
       categoryKey: 'projects.1.category',
       descriptionKey: 'projects.1.description',
-      image: cons1
+      image: particulier
     },
     {
       titleKey: 'projects.2.title',

@@ -16,7 +16,7 @@ export const translations: Translations = {
   'header.home': { fr: 'Accueil', en: 'Home' },
   
   // Hero
-  'hero.experience': { fr: '+2 ans d\'expérience', en: '+2 years of experience' },
+  'hero.experience': { fr: '+1 ans d\'expérience', en: '+1 years of experience' },
   'hero.subtitle': { fr: 'Votre partenaire de confiance pour tous vos', en: 'Your trusted partner for all your' },
   'hero.title': { fr: 'projets BTP', en: 'construction projects' },
   'hero.description': { fr: 'Construction, rénovation, et aménagement avec expertise et qualité garantie', en: 'Construction, renovation, and fitting with expertise and guaranteed quality' },
@@ -78,7 +78,7 @@ export const translations: Translations = {
   'about.p1': { fr: 'Fondée en 2024, SEMEN-BTP est une entreprise familiale spécialisée dans tous les travaux de construction, rénovation et aménagement. Notre expérience et notre savoir-faire nous permettent de réaliser des projets de toutes envergures avec professionnalisme et rigueur.', en: 'Founded in 2024, SEMEN-BTP is a family-owned company specializing in all construction, renovation, and fitting work. Our experience and expertise allow us to carry out projects of all sizes with professionalism and rigor.' },
   'about.p2': { fr: 'Nous mettons un point d\'honneur à offrir à nos clients un service personnalisé, des conseils avisés et un suivi rigoureux de chaque chantier. Notre équipe d\'artisans qualifiés et passionnés s\'engage à transformer vos idées en réalité.', en: 'We take pride in offering our clients personalized service, expert advice, and rigorous monitoring of each project. Our team of qualified and passionate craftsmen is committed to turning your ideas into reality.' },
   'about.quote': { fr: '"Notre mission : bâtir des projets durables et de qualité qui dépassent vos attentes"', en: '"Our mission: building durable and quality projects that exceed your expectations"' },
-  'about.author': { fr: '- Jean SEMEN, Fondateur', en: '- Jean SEMEN, Founder' },
+  'about.author': { fr: '- Wagane Senghor , Patrice Niokhor Faye, Fondateur', en: '- Wagane Senghor , Patrice Niokhor Faye, Founder' },
   'about.years': { fr: 'Années d\'excellence', en: 'Years of excellence' },
   
   // Values
@@ -149,9 +149,9 @@ export const translations: Translations = {
   'testimonial.8': { fr: 'Prokhan fer a travaillé avec SEMAN-BTP pour l\'extension de nos installations industrielles. Un partenaire fiable qui comprend les enjeux techniques et budgétaires. Livraison conforme et délais respectés.', en: 'Prokhan fer worked with SEMAN-BTP for the extension of our industrial facilities. A reliable partner who understands technical and budgetary challenges. Conforming delivery and met deadlines.' },
 
   // Projects
-  'projects.1.title': { fr: 'Entrepôt TIS HYDROCARBURES', en: 'TIS HYDROCARBONS warehouse' },
+  'projects.1.title': { fr: 'Chantier pour un particulier', en: 'Private project' },
   'projects.1.category': { fr: 'Construction neuve', en: 'New construction' },
-  'projects.1.description': { fr: 'Projet de réalisation des dallages de l\'entrepôt TIS HYDROCARBURES', en: 'TIS HYDROCARBURES warehouse flooring project' },
+  'projects.1.description': { fr: 'Projet de construction d\'un villa à usage d\'habitation', en: 'Project of construction of a villa for residential use' },
   'projects.2.title': { fr: 'Entrepôt TIS HYDROCARBURES', en: 'TIS HYDROCARBONS warehouse' },
   'projects.2.category': { fr: 'Rénovation', en: 'Renovation' },
   'projects.2.description': { fr: 'Projet de réalisation des dallages de l\'entrepôt TIS HYDROCARBURES', en: 'TIS HYDROCARBURES warehouse flooring project' },
@@ -169,7 +169,7 @@ export const translations: Translations = {
   'projects.6.description': { fr: 'Projet de rénovation de la banque SUNU BANK de Maristes .', en: 'SUNU BANK Maristes renovation project' },
   
   // Footer
-  'footer.tagline': { fr: 'Bâtir vos projets, façonner votre confort, la solidité de nos engagements', en: 'Building your future' },
+  'footer.tagline': { fr: 'Bâtir vos projets, façonner votre confort, la solidité de nos engagements', en: 'Building your projects, shaping your comfort, the strength of our commitments' },
   'footer.description': { fr: 'Votre partenaire de confiance pour tous vos projets de construction, rénovation et aménagement depuis plus de 2 ans.', en: 'Your trusted partner for all your construction, renovation, and fitting projects for over 2 years.' },
   'footer.nav.home': { fr: 'Accueil', en: 'Home' },
   'footer.nav.services': { fr: 'Services', en: 'Services' },

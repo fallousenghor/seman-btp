@@ -7,6 +7,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showFullTagline, setShowFullTagline] = useState(false);
   const { t } = useLanguage();
 
   const scrollToSection = (id: string) => {
@@ -47,7 +48,13 @@ export default function Header() {
                   <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                     SEMAN<span className="text-orange-500">-BTP</span>
                   </h1>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">{t('footer.tagline')}</p>
+                  <p className="hidden sm:block text-xs text-gray-600 dark:text-gray-400 mt-1">{t('footer.tagline')}</p>
+                  <button 
+                    className="block sm:hidden text-xs text-gray-600 dark:text-gray-400 mt-1 hover:text-orange-500"
+                    onClick={() => setShowFullTagline(!showFullTagline)}
+                  >
+                    {showFullTagline ? t('footer.tagline') : '...'}
+                  </button>
                 </div>
               </div>
             </div>
