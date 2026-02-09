@@ -25,13 +25,14 @@ export const translations: Translations = {
   'hero.stats.years': { fr: 'Années d\'expérience', en: 'Years of experience' },
   'hero.stats.projects': { fr: 'Projets réalisés', en: 'Projects completed' },
   'hero.stats.satisfied': { fr: 'Clients satisfaits', en: 'Satisfied clients' },
-  'hero.stats.value': { fr: '2+', en: '2+' },
+  'hero.stats.value': { fr: '1+', en: '1+' },
   'hero.stats.projectsValue': { fr: '5+', en: '5+' },
   'hero.stats.percent': { fr: '100%', en: '100%' },
   
   // Services
   'services.title': { fr: 'Une expertise complète à votre service', en: 'Complete expertise at your service' },
   'services.subtitle': { fr: 'Du projet à la réalisation, nous vous accompagnons avec professionnalisme et savoir-faire', en: 'From project to completion, we accompany you with professionalism and expertise' },
+  'services.section': { fr: 'Nos Services', en: 'Our Services' },
   'services.cta.title': { fr: 'Un projet sur mesure ?', en: 'A customized project?' },
   'services.cta.description': { fr: 'Contactez-nous pour discuter de vos besoins spécifiques et obtenir un devis personnalisé', en: 'Contact us to discuss your specific needs and get a personalized quote' },
   'services.cta.button': { fr: 'Obtenir un devis gratuit', en: 'Get a free quote' },
@@ -74,8 +75,9 @@ export const translations: Translations = {
   'service.6.features.2': { fr: 'Allées', en: 'Driveways' },
   
   // About
-  'about.title': { fr: 'SEMAN-BTP, votre partenaire de confiance depuis plus de 2 ans', en: 'SEMAN-BTP, your trusted partner for over 2 years' },
-  'about.p1': { fr: 'Fondée en 2024, SEMEN-BTP est une entreprise familiale spécialisée dans tous les travaux de construction, rénovation et aménagement. Notre expérience et notre savoir-faire nous permettent de réaliser des projets de toutes envergures avec professionnalisme et rigueur.', en: 'Founded in 2024, SEMEN-BTP is a family-owned company specializing in all construction, renovation, and fitting work. Our experience and expertise allow us to carry out projects of all sizes with professionalism and rigor.' },
+  'about.title': { fr: 'SEMAN-BTP, votre partenaire de confiance depuis plus de 1 ans', en: 'SEMAN-BTP, your trusted partner for over 1 years' },
+  'about.subtitle': { fr: 'À propos de nous', en: 'About us' },
+  'about.p1': { fr: 'Fondée en 2025, SEMAN-BTP est une entreprise familiale spécialisée dans tous les travaux de construction, rénovation et aménagement. Notre expérience et notre savoir-faire nous permettent de réaliser des projets de toutes envergures avec professionnalisme et rigueur.', en: 'Founded in 2025, SEMAN-BTP is a family-owned company specializing in all construction, renovation, and fitting work. Our experience and expertise allow us to carry out projects of all sizes with professionalism and rigor.' },
   'about.p2': { fr: 'Nous mettons un point d\'honneur à offrir à nos clients un service personnalisé, des conseils avisés et un suivi rigoureux de chaque chantier. Notre équipe d\'artisans qualifiés et passionnés s\'engage à transformer vos idées en réalité.', en: 'We take pride in offering our clients personalized service, expert advice, and rigorous monitoring of each project. Our team of qualified and passionate craftsmen is committed to turning your ideas into reality.' },
   'about.quote': { fr: '"Notre mission : bâtir des projets durables et de qualité qui dépassent vos attentes"', en: '"Our mission: building durable and quality projects that exceed your expectations"' },
   'about.author': { fr: '- Wagane Senghor , Patrice Niokhor Faye, Fondateur', en: '- Wagane Senghor , Patrice Niokhor Faye, Founder' },
@@ -94,12 +96,14 @@ export const translations: Translations = {
   // Projects
   'projects.title': { fr: 'Des projets qui parlent pour nous', en: 'Projects that speak for us' },
   'projects.subtitle': { fr: 'Découvrez quelques-unes de nos réalisations récentes et laissez-vous inspirer', en: 'Discover some of our recent achievements and let yourself be inspired' },
+  'projects.section': { fr: 'Nos Réalisations', en: 'Our Projects' },
   'projects.cta': { fr: 'Contactez-nous', en: 'Contact us' },
   'projects.more': { fr: 'Envie de voir plus de nos réalisations ou de discuter de votre projet ?', en: 'Want to see more of our work or discuss your project?' },
   
   // Testimonials
   'testimonials.title': { fr: 'Ils nous font confiance', en: 'They trust us' },
   'testimonials.subtitle': { fr: 'La satisfaction de nos clients est notre plus belle récompense', en: 'Customer satisfaction is our greatest reward' },
+  'testimonials.section': { fr: 'Témoignages', en: 'Testimonials' },
   'testimonials.rating': { fr: 'Note moyenne : 5/5', en: 'Average rating: 5/5' },
   'testimonials.reviews': { fr: 'Basée sur plus de 20 avis clients', en: 'Based on more than 20 customer reviews' },
   'testimonials.recommend': { fr: '100% de nos clients recommandent nos services', en: '100% of our customers recommend our services' },
@@ -138,7 +142,7 @@ export const translations: Translations = {
 
   // Testimonials
   'testimonial.1': { fr: 'SEMAN-BTP a réalisé la rénovation complète de notre maison. Le résultat dépasse nos espérances ! Une équipe professionnelle, à l\'écoute et respectueuse des délais. Je recommande vivement.', en: 'SEMAN-BTP completed the full renovation of our house. The result exceeds our expectations! A professional team, attentive and respectful of deadlines. I highly recommend.' },
-  'testimonial.2': { fr: 'Nous travaillons avec SEMAN-BTP depuis 5 ans sur plusieurs projets de construction. Leur expertise et leur sérieux font d\'eux un partenaire de confiance. Qualité et respect des délais sont toujours au rendez-vous.', en: 'We have been working with SEMAN-BTP for 5 years on several construction projects. Their expertise and seriousness make them a trusted partner. Quality and deadline compliance are always met.' },
+  'testimonial.2': { fr: 'Nous travaillant avec SEMAN-BTP depuis 5 ans sur plusieurs projets de construction. Leur expertise et leur sérieux font d\'eux un partenaire de confiance. Qualité et respect des délais sont toujours au rendez-vous.', en: 'We have been working with SEMAN-BTP for 5 years on several construction projects. Their expertise and seriousness make them a trusted partner. Quality and deadline compliance are always met.' },
   'testimonial.3': { fr: 'Extension de notre maison réalisée avec brio. L\'équipe a su nous conseiller et nous accompagner tout au long du projet. Le chantier était propre et organisé. Merci pour votre professionnalisme !', en: 'Extension of our house carried out with brio. The team was able to advise and support us throughout the project. The worksite was clean and organized. Thank you for your professionalism!' },
   
   // Client Testimonials
@@ -170,7 +174,7 @@ export const translations: Translations = {
   
   // Footer
   'footer.tagline': { fr: 'Bâtir vos projets, façonner votre confort, la solidité de nos engagements', en: 'Building your projects, shaping your comfort, the strength of our commitments' },
-  'footer.description': { fr: 'Votre partenaire de confiance pour tous vos projets de construction, rénovation et aménagement depuis plus de 2 ans.', en: 'Your trusted partner for all your construction, renovation, and fitting projects for over 2 years.' },
+  'footer.description': { fr: 'Votre partenaire de confiance pour tous vos projets de construction, rénovation et aménagement depuis plus de 1 ans.', en: 'Your trusted partner for all your construction, renovation, and fitting projects for over 1 years.' },
   'footer.nav.home': { fr: 'Accueil', en: 'Home' },
   'footer.nav.services': { fr: 'Services', en: 'Services' },
   'footer.nav.about': { fr: 'À propos', en: 'About' },

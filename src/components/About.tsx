@@ -28,7 +28,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">À propos de nous</span>
+            <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">{t('about.subtitle')}</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-6">
               {t('about.title')}
             </h2>
@@ -57,7 +57,7 @@ export default function About() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-orange-500 text-white p-6 rounded-xl shadow-xl">
-                <p className="text-4xl font-bold">2+</p>
+                <p className="text-4xl font-bold">1+</p>
                 <p className="text-sm">{t('about.years')}</p>
               </div>
             </div>

@@ -52,7 +52,7 @@ export default function Projects() {
     <section id="realisations" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">Nos Réalisations</span>
+          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wide">{t('projects.section')}</span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
             {t('projects.title')}
           </h2>
