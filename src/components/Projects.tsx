@@ -1,4 +1,10 @@
 import { useLanguage } from '../context/LanguageContext';
+import cons1 from '../assets/cons1.jpeg';
+import cons2 from '../assets/cons2.jpeg';
+import cons3 from '../assets/cons3.jpeg';
+import cons4 from '../assets/cons4.jpeg';
+import eglise from '../assets/eglise.jpeg';
+import cons7 from '../assets/cons7.jpeg';
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -8,37 +14,37 @@ export default function Projects() {
       titleKey: 'projects.1.title',
       categoryKey: 'projects.1.category',
       descriptionKey: 'projects.1.description',
-      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: cons1
     },
     {
       titleKey: 'projects.2.title',
       categoryKey: 'projects.2.category',
       descriptionKey: 'projects.2.description',
-      image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: cons2
     },
     {
       titleKey: 'projects.3.title',
       categoryKey: 'projects.3.category',
       descriptionKey: 'projects.3.description',
-      image: 'https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: cons3
     },
     {
       titleKey: 'projects.4.title',
       categoryKey: 'projects.4.category',
       descriptionKey: 'projects.4.description',
-      image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: cons4
     },
     {
       titleKey: 'projects.5.title',
       categoryKey: 'projects.5.category',
       descriptionKey: 'projects.5.description',
-      image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: eglise
     },
     {
       titleKey: 'projects.6.title',
       categoryKey: 'projects.6.category',
       descriptionKey: 'projects.6.description',
-      image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: cons7
     }
   ];
 

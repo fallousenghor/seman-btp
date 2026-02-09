@@ -51,7 +51,7 @@ export default function About() {
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-2xl overflow-hidden shadow-2xl transition-colors duration-300">
                 <img
-                  src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="/cons2.jpeg"
                   alt="Chantier SEMEN-BTP"
                   className="w-full h-full object-cover"
                 />

@@ -1,3 +1,4 @@
+
 import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import Logo from './Logo';
 import { useLanguage } from '../context/LanguageContext';

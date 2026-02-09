@@ -137,9 +137,16 @@ export const translations: Translations = {
   'contact.call': { fr: 'Appeler maintenant', en: 'Call now' },
 
   // Testimonials
-  'testimonial.1': { fr: 'SEMEN-BTP a réalisé la rénovation complète de notre maison. Le résultat dépasse nos espérances ! Une équipe professionnelle, à l\'écoute et respectueuse des délais. Je recommande vivement.', en: 'SEMEN-BTP completed the full renovation of our house. The result exceeds our expectations! A professional team, attentive and respectful of deadlines. I highly recommend.' },
-  'testimonial.2': { fr: 'Nous travaillons avec SEMEN-BTP depuis 5 ans sur plusieurs projets de construction. Leur expertise et leur sérieux font d\'eux un partenaire de confiance. Qualité et respect des délais sont toujours au rendez-vous.', en: 'We have been working with SEMEN-BTP for 5 years on several construction projects. Their expertise and seriousness make them a trusted partner. Quality and deadline compliance are always met.' },
+  'testimonial.1': { fr: 'SEMAN-BTP a réalisé la rénovation complète de notre maison. Le résultat dépasse nos espérances ! Une équipe professionnelle, à l\'écoute et respectueuse des délais. Je recommande vivement.', en: 'SEMAN-BTP completed the full renovation of our house. The result exceeds our expectations! A professional team, attentive and respectful of deadlines. I highly recommend.' },
+  'testimonial.2': { fr: 'Nous travaillons avec SEMAN-BTP depuis 5 ans sur plusieurs projets de construction. Leur expertise et leur sérieux font d\'eux un partenaire de confiance. Qualité et respect des délais sont toujours au rendez-vous.', en: 'We have been working with SEMAN-BTP for 5 years on several construction projects. Their expertise and seriousness make them a trusted partner. Quality and deadline compliance are always met.' },
   'testimonial.3': { fr: 'Extension de notre maison réalisée avec brio. L\'équipe a su nous conseiller et nous accompagner tout au long du projet. Le chantier était propre et organisé. Merci pour votre professionnalisme !', en: 'Extension of our house carried out with brio. The team was able to advise and support us throughout the project. The worksite was clean and organized. Thank you for your professionalism!' },
+  
+  // Client Testimonials
+  'testimonial.4': { fr: 'SAHELIA CONSTRUCTION a fait confiance à SEMAN-BTP pour plusieurs projets d\'infrastructure. Leur rigueur professionnelle, le respect des délais et la qualité irréprochable des travaux font d\'eux un partenaire de choix.', en: 'SAHELIA CONSTRUCTION trusted SEMAN-BTP for several infrastructure projects. Their professional rigor, deadline compliance, and impeccable work quality make them a partner of choice.' },
+  'testimonial.5': { fr: 'CBAO BANK a collaboré avec SEMAN-BTP pour l\'aménagement de nos agences. Une équipe sérieuse, réactive et disponible. Les travaux ont été livrés dans les temps avec un résultat très satisfaisant.', en: 'CBAO BANK collaborated with SEMAN-BTP for the fitting out of our branches. A serious, responsive, and available team. The work was delivered on time with a very satisfactory result.' },
+  'testimonial.6': { fr: 'SUNU BANK témoigne de son entière satisfaction suite aux travaux réalisés par SEMAN-BTP. Professionnalisme, expertise technique et respect du budget sont au rendez-vous. Nous recommandons.', en: 'SUNU BANK expresses its complete satisfaction following the work carried out by SEMAN-BTP. Professionalism, technical expertise, and budget compliance are all present. We recommend.' },
+  'testimonial.7': { fr: 'TIS HYDROCARBURES a bénéficié de l\'expertise SEMAN-BTP pour des travaux d\'envergure. Une équipe compétente, des délais respectés et un travail de qualité conformes à nos standards exigeants.', en: 'TIS HYDROCARBURES benefited from SEMAN-BTP expertise for large-scale work. A competent team, met deadlines, and quality work that meets our demanding standards.' },
+  'testimonial.8': { fr: 'Prokhan fer a travaillé avec SEMAN-BTP pour l\'extension de nos installations industrielles. Un partenaire fiable qui comprend les enjeux techniques et budgétaires. Livraison conforme et délais respectés.', en: 'Prokhan fer worked with SEMAN-BTP for the extension of our industrial facilities. A reliable partner who understands technical and budgetary challenges. Conforming delivery and met deadlines.' },
 
   // Projects
   'projects.1.title': { fr: 'Résidence Les Chênes', en: 'Les Chênes Residence' },
@@ -162,7 +169,7 @@ export const translations: Translations = {
   'projects.6.description': { fr: 'Extension de 60m² avec véranda et terrasse sur pilotis', en: '60m² extension with conservatory and raised terrace' },
   
   // Footer
-  'footer.tagline': { fr: 'Bâtir votre avenir', en: 'Building your future' },
+  'footer.tagline': { fr: 'Bâtir vos projets, façonner votre confort, la solidité de nos engagements', en: 'Building your future' },
   'footer.description': { fr: 'Votre partenaire de confiance pour tous vos projets de construction, rénovation et aménagement depuis plus de 2 ans.', en: 'Your trusted partner for all your construction, renovation, and fitting projects for over 2 years.' },
   'footer.nav.home': { fr: 'Accueil', en: 'Home' },
   'footer.nav.services': { fr: 'Services', en: 'Services' },
