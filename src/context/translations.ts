@@ -80,7 +80,7 @@ export const translations: Translations = {
   'about.p1': { fr: 'Fondée en 2025, SEMAN-BTP est une entreprise familiale spécialisée dans tous les travaux de construction, rénovation et aménagement. Notre expérience et notre savoir-faire nous permettent de réaliser des projets de toutes envergures avec professionnalisme et rigueur.', en: 'Founded in 2025, SEMAN-BTP is a family-owned company specializing in all construction, renovation, and fitting work. Our experience and expertise allow us to carry out projects of all sizes with professionalism and rigor.' },
   'about.p2': { fr: 'Nous mettons un point d\'honneur à offrir à nos clients un service personnalisé, des conseils avisés et un suivi rigoureux de chaque chantier. Notre équipe d\'artisans qualifiés et passionnés s\'engage à transformer vos idées en réalité.', en: 'We take pride in offering our clients personalized service, expert advice, and rigorous monitoring of each project. Our team of qualified and passionate craftsmen is committed to turning your ideas into reality.' },
   'about.quote': { fr: '"Notre mission : bâtir des projets durables et de qualité qui dépassent vos attentes"', en: '"Our mission: building durable and quality projects that exceed your expectations"' },
-  'about.author': { fr: '- WAGANE Senghor , PATRICE NIOKHOR Faye, Fondateurs', en: '- Wagane Senghor , Patrice Niokhor Faye, Founder' },
+  'about.author': { fr: '- Wagane SENGHOR , Patrice Niokhor FAYE, Fondateurs', en: '- Wagane Senghor , Patrice Niokhor Faye, Founder' },
   'about.years': { fr: 'Années d\'excellence', en: 'Years of excellence' },
   
   // Values
