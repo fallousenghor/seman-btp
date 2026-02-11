@@ -212,7 +212,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-1">{language === 'fr' ? 'Horaires' : 'Hours'}</h4>
                   <p className="text-gray-600 dark:text-gray-300">
-                    {language === 'fr' ? 'Lundi - Viernes\n8h00 - 13h00 / 14h00 - 18h00' : 'Monday - Friday\n8am - 1pm / 2pm - 6pm'}
+                    {language === 'fr' ? 'Lundi - Vendredi\n8h00 - 13h00 / 14h00 - 18h00' : 'Monday - Friday\n8am - 1pm / 2pm - 6pm'}
                   </p>
                 </div>
               </div>
