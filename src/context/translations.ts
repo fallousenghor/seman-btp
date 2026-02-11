@@ -127,7 +127,7 @@ export const translations: Translations = {
   'contact.form.subject.5': { fr: 'Autre', en: 'Other' },
   'contact.form.placeholder.name': { fr: 'Prenom nom', en: 'First name last name' },
   'contact.form.placeholder.phone': { fr: '+221 7X XXX XX XX', en: '+221 7X XXX XX XX' },
-  'contact.form.placeholder.email': { fr: 'exemple@email.com', en: 'example@email.com' },
+  'contact.form.placeholder.email': { fr: 'exemple@email.com', en: 'example@gmail.com' },
   'contact.form.placeholder.message': { fr: 'Décrivez-nous votre projet en détail...', en: 'Describe your project in detail...' },
   'contact.success': { fr: 'Message envoyé !', en: 'Message sent!' },
   'contact.success.desc': { fr: 'Nous vous répondrons dans les 24 heures.', en: 'We will respond within 24 hours.' },
