@@ -1,26 +1,46 @@
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    from_email: '',
     phone: '',
     subject: '',
     message: ''
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const { t, language } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 3000);
+    setIsLoading(true);
+    setError(false);
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_semanbtp',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_devis',
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+      );
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ from_name: '', from_email: '', phone: '', subject: '', message: '' });
+      }, 3000);
+    } catch (err) {
+      console.error('Erreur d\'envoi:', err);
+      setError(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -65,8 +85,13 @@ export default function Contact() {
                   <h4 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">{t('contact.success')}</h4>
                   <p className="text-green-700 dark:text-green-300">{t('contact.success.desc')}</p>
                 </div>
+              ) : error ? (
+                <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6 text-center">
+                  <h4 className="text-xl font-bold text-red-800 dark:text-red-400 mb-2">{language === 'fr' ? 'Erreur d\'envoi' : 'Send Error'}</h4>
+                  <p className="text-red-700 dark:text-red-300">{language === 'fr' ? 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.' : 'An error occurred. Please try again or contact us directly by phone.'}</p>
+                </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -74,9 +99,9 @@ export default function Contact() {
                       </label>
                       <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="from_name"
+                        name="from_name"
+                        value={formData.from_name}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
@@ -107,9 +132,9 @@ export default function Contact() {
                     </label>
                     <input
                       type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
+                      id="from_email"
+                      name="from_email"
+                      value={formData.from_email}
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 dark:border-slate-500 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white dark:bg-slate-600 text-gray-900 dark:text-white"
@@ -153,12 +178,29 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
+                  {/* Champs cachés pour EmailJS */}
+                  <input type="hidden" name="to_email" value="semanbtp59@gmail.com" />
+                  <input type="hidden" name="company_name" value="SEMAN BTP" />
+
                   <button
                     type="submit"
-                    className="w-full bg-orange-500 text-white px-8 py-4 rounded-md hover:bg-orange-600 font-semibold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                    disabled={isLoading}
+                    className="w-full bg-orange-500 text-white px-8 py-4 rounded-md hover:bg-orange-600 font-semibold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {t('contact.form.submit')}
-                    <Send size={20} />
+                    {isLoading ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        {language === 'fr' ? 'Envoi en cours...' : 'Sending...'}
+                      </>
+                    ) : (
+                      <>
+                        {t('contact.form.submit')}
+                        <Send size={20} />
+                      </>
+                    )}
                   </button>
 
                   <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
